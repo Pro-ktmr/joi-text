@@ -4,38 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <style>
-    h1 {
-      font-size: xx-large;
-      font-weight: bold;
-      margin-bottom: 1.5rem;
-    }
-
-    h2 {
-      font-size: x-large;
-      font-weight: bold;
-      margin-top: 1.5rem;
-    }
-
-    h1 a {
-      color: black;
-    }
-
-    .container {
-      max-width: fit-content;
-    }
-
-    .hint {
-      color: #008000;
-      cursor: pointer;
-      text-decoration: underline;
-    }
-  </style>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
+  <link href="index.css" rel="stylesheet">
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0YCEGH6ERT"></script>
   <script>
@@ -48,13 +17,124 @@
 </head>
 
 <body>
-  <div class="container">
-    <h1><a href=".">JOI 公式テキスト サポートページ</a></h1>
-    <div>
-      <p>
-        準備中．
-      </p>
+  <div class="top-color">
+    <span style="background-color: #F15F41; margin-left: 0;"></span>
+    <span style="background-color: #E54490;"></span>
+    <span style="background-color: #8459A0;"></span>
+    <span style="background-color: #0089CF;"></span>
+    <span style="background-color: #00ADA2;"></span>
+    <span style="background-color: #AEC941;"></span>
+    <span style="background-color: #FFCB04;"></span>
+    <span style="background-color: #F7933A; margin-right: 0;"></span>
+  </div>
+  <div class="top">
+    <h2 class="book-copy">
+      <span class="no-break">日本情報オリンピックの</span><span class="no-break">公式テキストが</span><span class="no-break">遂に登場！！</span>
+    </h2>
+    <div class="book">
+      <div class="book-cover">
+        <img src="img/cover.png" alt="JOI 公式テキスト　Python で問題解決　情報オリンピックに出てみよう　表紙">
+      </div>
+      <div class="book-details">
+        <h1>
+          <span style="font-size: x-large;"><span class="no-break">JOI</span> <span
+              class="no-break">公式テキスト</span></span><br />
+          <span style="font-size: xxx-large; font-weight: 900;"><span class="no-break">Python で</span><span
+              class="no-break">問題解決</span></span><br />
+          <span style="font-size: x-large;"><span class="no-break">情報オリンピックに</span><span
+              class="no-break">出てみよう</span></span><br />
+        </h1>
+        <dl>
+          <dt>執筆</dt>
+          <dd>北村 祐稀</dd>
+          <dt>編修</dt>
+          <dd>筧 捷彦 <br /> 山口 利恵</dd>
+          <dt>監修</dt>
+          <dd>情報オリンピック日本委員会</dd>
+          <dt>発行</dt>
+          <dd>実教出版</dd>
+        </dl>
+        <a class="button" href="https://www.jikkyo.co.jp/" target="_blank">
+          詳しくはこちら<br />
+          <span style="font-weight: normal; font-size: small;">(実教出版のページに移動)</span>
+        </a>
+      </div>
     </div>
+  </div>
+
+  <h2>誤植情報</h2>
+  <div class="container" style="text-align: center;">
+    誤植はまだ見つかっていません．
+  </div>
+
+  <h2>便利リンク集</h2>
+  <div class="cards">
+    <a href="list.html" class="card">
+      <div class="card-img">
+        <img src="img/list.png" alt="本書問題リストのスクリーンショット">
+      </div>
+      <div class="card-title">
+        本書問題リスト
+      </div>
+      <div class="card-body">
+        例題や類題の AtCoder ページへリンクがはられた問題リスト．自分のユーザ名を入力すると達成状況が一目でわかる．
+      </div>
+    </a>
+    <a href="https://www.youtube.com/playlist?list=PL6OlXfFix0hUZU6OkqXUaVSXhe0dHlc0s" class="card">
+      <div class="card-img">
+        <img src="img/youtube.png" alt="YouTube 再生リストのスクリーンショット">
+      </div>
+      <div class="card-title">
+        本書解説動画 再生リスト
+      </div>
+      <div class="card-body">
+        本書の一部の節と対応した公式解説動画の YouTube 再生リスト．
+      </div>
+    </a>
+    <a href="https://youtube.com" class="card">
+      <div class="card-img">
+        <img src="img/pytry.png" alt="PyTry のスクリーンショット">
+      </div>
+      <div class="card-title">
+        PyTry
+      </div>
+      <div class="card-body">
+        Python 簡単環境．エラーメッセージの日本語化やデータの自動保存など，初心者に優しい機能つき．
+      </div>
+    </a>
+    <a href="https://atcoder.jp/home" class="card">
+      <div class="card-img">
+        <img src="img/atcoder.png" alt="AtCoder のスクリーンショット">
+      </div>
+      <div class="card-title">
+        AtCoder
+      </div>
+      <div class="card-body">
+        日本最大の競技プログラミングコンテストサイト．3000 問以上の過去問のオンラインジャッジも利用可能．
+      </div>
+    </a>
+    <a href="https://joi.goodbaton.com/" class="card">
+      <div class="card-img">
+        <img src="img/aoj_atcoder_joi.png" alt="AOJ/AtCoder-JOI のスクリーンショット">
+      </div>
+      <div class="card-title">
+        AOJ/AtCoder-JOI
+      </div>
+      <div class="card-body">
+        日本情報オリンピック (JOI) の過去問の AtCoder ページへのリンクがはられた問題リスト．有志の投票で決定された非公式難易度順．
+      </div>
+    </a>
+    <a href="https://kenkoooo.com/atcoder/#/table/" class="card">
+      <div class="card-img">
+        <img src="img/atcoder_problems.png" alt="AtCoder Problems のスクリーンショット">
+      </div>
+      <div class="card-title">
+        AtCoder Problems
+      </div>
+      <div class="card-body">
+        AtCoder の過去問を一覧できる問題リスト．問題の難易度 (difficulty) の計算など，追加機能が豊富．
+      </div>
+    </a>
   </div>
 </body>
 
