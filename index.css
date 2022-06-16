@@ -63,15 +63,16 @@ html {
 body {
   width: 100%;
   background-color: #FCFCFC;
+  padding-bottom: 4em;
 }
 
-.top-color {
+.colorful {
   height: 1em;
   display: -webkit-flex;
   display: flex;
 }
 
-.top-color span {
+.colorful span {
   width: 12.5%;
   height: 100%;
   margin: 0 0.2em;
