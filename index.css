@@ -152,10 +152,12 @@ body {
   position: absolute;
   top: 50%;
   right: 20px;
+  -webkit-transform: translateY(-50%) rotate(135deg);
   transform: translateY(-50%) rotate(135deg);
 }
 
 .accordion .toggle:checked+.title::after {
+  -webkit-transform: translateY(-50%) rotate(-45deg);
   transform: translateY(-50%) rotate(-45deg);
 }
 
@@ -164,12 +166,14 @@ body {
   overflow: hidden;
   border: #606060 2px solid;
   border-top: none;
+  -webkit-transition: max-height 1.0s ease;
   transition: max-height 1.0s ease;
 }
 
 .accordion .toggle:checked+.title+.content {
   max-height: 5000px;
   border-top: #606060 2px solid;
+  -webkit-transition: max-height 1.0s ease;
   transition: max-height 1.0s ease;
 }
 
@@ -193,7 +197,7 @@ body {
   counter-increment: feature-counter;
   content: counter(feature-counter);
   font-family: 'Bilbo Swash Caps', cursive;
-  font-size: xxx-large;
+  font-size: 200%;
   width: 1.2em;
 }
 
@@ -204,6 +208,7 @@ body {
   padding: 0 0.2em;
   border-bottom: 0.1em solid;
   line-height: 34px;
+  width: -webkit-fit-content;
   width: fit-content;
 }
 
