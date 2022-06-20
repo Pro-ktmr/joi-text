@@ -173,7 +173,7 @@ body {
 }
 
 .accordion .toggle:checked+.title+.content {
-  max-height: 5000px;
+  max-height: 5500px;
   border-top: #606060 2px solid;
   -webkit-transition: max-height 1.0s ease;
   transition: max-height 1.0s ease;
