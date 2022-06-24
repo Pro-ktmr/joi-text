@@ -26,7 +26,7 @@ dl dd {
 
 a.button {
   display: block;
-  margin: 0 auto;
+  margin: 0 auto 0.5em auto;
   padding: 0.6em 0.8em;
   width: fit-content;
   text-align: center;
@@ -45,6 +45,15 @@ a.button:hover {
 
 a.button:hover span {
   color: #FCFCFC;
+}
+
+a.amazon {
+  color: #e47911;
+  border: 0.15em solid #e47911;
+}
+
+a.amazon:hover {
+  background-color: #e47911;
 }
 
 span.no-break {
