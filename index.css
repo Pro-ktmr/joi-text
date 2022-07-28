@@ -24,6 +24,27 @@ dl dd {
   width: 80%;
 }
 
+.overflow-scroll-x {
+  display: block;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+table {
+  width: 840px;
+  border-spacing: 0;
+}
+
+th,
+td {
+  vertical-align: top;
+  padding: 1em 0.5em;
+}
+
+td {
+  text-align: left;
+}
+
 a.button {
   display: block;
   margin: 0 auto 0.5em auto;
