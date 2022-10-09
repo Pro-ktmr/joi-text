@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bilbo+Swash+Caps&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bilbo+Swash+Caps&display=swap");
 
 * {
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
   margin: 0;
   padding: 0;
-  color: #1C1C1C;
+  color: #1c1c1c;
 }
 
 dl {
@@ -51,21 +51,21 @@ a.button {
   padding: 0.6em 0.8em;
   width: fit-content;
   text-align: center;
-  color: #1C1C1C;
+  color: #1c1c1c;
   text-decoration: none;
   font-weight: 600;
   font-size: x-large;
   line-height: 100%;
-  border: 0.15em solid #1C1C1C;
+  border: 0.15em solid #1c1c1c;
 }
 
 a.button:hover {
-  background-color: #1C1C1C;
-  color: #FCFCFC;
+  background-color: #1c1c1c;
+  color: #fcfcfc;
 }
 
 a.button:hover span {
-  color: #FCFCFC;
+  color: #fcfcfc;
 }
 
 a.amazon {
@@ -94,7 +94,7 @@ html {
 
 body {
   width: 100%;
-  background-color: #FCFCFC;
+  background-color: #fcfcfc;
   padding-bottom: 4em;
 }
 
@@ -114,7 +114,7 @@ body {
   text-align: center;
   margin: 2em 0 5em 0;
   padding: 2em 0;
-  background-color: #EFDED7;
+  background-color: #efded7;
 }
 
 .top .book-copy {
@@ -163,7 +163,7 @@ body {
 }
 
 .accordion .title h2 {
-  color: #FCFCFC;
+  color: #fcfcfc;
   background-color: #606060;
   padding: 0.2em 0;
   margin-top: 0;
@@ -179,8 +179,8 @@ body {
   content: "";
   width: 12px;
   height: 12px;
-  border-top: 4px solid #FCFCFC;
-  border-right: 4px solid #FCFCFC;
+  border-top: 4px solid #fcfcfc;
+  border-right: 4px solid #fcfcfc;
   position: absolute;
   top: 50%;
   right: 20px;
@@ -188,7 +188,7 @@ body {
   transform: translateY(-50%) rotate(135deg);
 }
 
-.accordion .toggle:checked+.title h2::after {
+.accordion .toggle:checked + .title h2::after {
   -webkit-transform: translateY(-50%) rotate(-45deg);
   transform: translateY(-50%) rotate(-45deg);
 }
@@ -198,22 +198,22 @@ body {
   overflow: hidden;
   border: #606060 2px solid;
   border-top: none;
-  -webkit-transition: max-height 1.0s ease;
-  transition: max-height 1.0s ease;
+  -webkit-transition: max-height 1s ease;
+  transition: max-height 1s ease;
 }
 
-.accordion .toggle:checked+.title+.content {
+.accordion .toggle:checked + .title + .content {
   max-height: 5500px;
   border-top: #606060 2px solid;
-  -webkit-transition: max-height 1.0s ease;
-  transition: max-height 1.0s ease;
+  -webkit-transition: max-height 1s ease;
+  transition: max-height 1s ease;
 }
 
 .accordion .content .inner {
   margin: 4em;
 }
 
-@media (max-width:800px) {
+@media (max-width: 800px) {
   .accordion .content .inner {
     margin: 2em 1em;
   }
@@ -228,7 +228,7 @@ body {
   display: inline-block;
   counter-increment: feature-counter;
   content: counter(feature-counter);
-  font-family: 'Bilbo Swash Caps', cursive;
+  font-family: "Bilbo Swash Caps", cursive;
   font-size: 200%;
   width: 1.2em;
 }
@@ -252,7 +252,7 @@ body {
 
 .features p em {
   font-style: normal;
-  background: linear-gradient(transparent 60%, #EFDED7 60%);
+  background: linear-gradient(transparent 60%, #efded7 60%);
 }
 
 .toc {
@@ -272,13 +272,13 @@ body {
   left: 0;
   width: 100%;
   height: 2px;
-  content: '';
-  background: #1C1C1C;
+  content: "";
+  background: #1c1c1c;
 }
 
 .toc h3 span {
   position: relative;
-  background-color: #FCFCFC;
+  background-color: #fcfcfc;
   padding: 0 2em;
 }
 
@@ -286,7 +286,7 @@ body {
   margin-top: 1em;
   margin-bottom: 0.4em;
   font-size: larger;
-  border-left: #1C1C1C 0.8em solid;
+  border-left: #1c1c1c 0.8em solid;
   padding: 0.2em 0 0.2em 0.8em;
 }
 
@@ -309,7 +309,7 @@ body {
   counter-increment: toc-counter;
   content: counter(toc-counter, decimal-leading-zero);
   margin-right: 0.8em;
-  color: #FCFCFC;
+  color: #fcfcfc;
   background-color: #606060;
   border-radius: 50%;
 }
@@ -330,9 +330,9 @@ body {
   margin-bottom: 2em;
   border: 1px solid #cccccc;
   border-radius: 4px;
-  color: #1C1C1C;
+  color: #1c1c1c;
   text-decoration: none;
-  background-color: #EFDED7;
+  background-color: #efded7;
   height: fit-content;
 }
 
@@ -343,7 +343,7 @@ body {
 .card-img {
   width: 250px;
   height: 187.5px;
-  background-color: #FCFCFC;
+  background-color: #fcfcfc;
   margin-bottom: 0.6em;
 }
 
