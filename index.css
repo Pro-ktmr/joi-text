@@ -194,6 +194,8 @@ body {
 }
 
 .accordion .content {
+  position: relative;
+  top: -2px;
   max-height: 0;
   overflow: hidden;
   border: #606060 2px solid;
