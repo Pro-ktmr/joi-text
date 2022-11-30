@@ -4,8 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <style>
     h1 {
       font-size: xx-large;
@@ -33,9 +32,7 @@
       text-decoration: underline;
     }
   </style>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   <script>
     window.addEventListener("load", (e) => {
       const params = new URLSearchParams(window.location.search);
@@ -76,6 +73,12 @@
             }
           }
         });
+
+        document.getElementById("joi-id-warning").style =
+          atcoder_id.value.match(/^[JK][0-9]{6}[A-Z]{2}$/g)
+            ? "display: block;"
+            : "display: none;";
+        document.getElementById("joi-id-warning-inner").innerHTML = atcoder_id.value;
       }
     }
 
@@ -97,8 +100,7 @@
   <meta property="og:url" content="https://pro-ktmr.github.io/joi-text/list.html" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="問題リスト｜JOI 公式テキスト　Python で問題解決" />
-  <meta property="og:description"
-    content="日本情報オリンピックの公式対策テキストが遂に登場！！ Pythonプログラミングからアルゴリズムまでを扱う一冊．未経験から本選進出までの道筋を提示．豊富なサンプルソース．過去問の自動採点システム対応．" />
+  <meta property="og:description" content="日本情報オリンピックの公式対策テキストが遂に登場！！ Pythonプログラミングからアルゴリズムまでを扱う一冊．未経験から本選進出までの道筋を提示．豊富なサンプルソース．過去問の自動採点システム対応．" />
   <meta property="og:image" content="https://pro-ktmr.github.io/joi-text/img/ogp.jpg" />
   <meta property="og:site_name" content="JOI 公式テキスト　Python で問題解決　情報オリンピックに出てみよう" />
   <meta name="twitter:card" content="summary" />
@@ -124,13 +126,21 @@
           <div class="form-group row">
             <label for="IDs" class="col-sm-4 col-form-label">AtCoder ユーザ名</label>
             <div class="col-sm-8">
-              <input type="textbox" class="form-control" id="atcoder_id" name="atcoder_id"
-                placeholder="AtCoder のユーザ名を入力">
+              <input type="textbox" class="form-control" id="atcoder_id" name="atcoder_id" placeholder="AtCoder のユーザ名を入力">
             </div>
           </div>
           <button type="submit" class="btn btn-dark">表示</button>
         </form>
       </div>
+    </div>
+
+    <div id="joi-id-warning" class="alert alert-warning" role="alert" style="display: none;">
+      <h4 class="alert-heading">警告</h4>
+      <p>
+        現在あなたが使用している AtCoder アカウント「<span id="joi-id-warning-inner"></span>」は日本情報オリンピックの競技用です．<br />
+        AtCoder Beginner Contest などに参加できないといった制限がかけられています．<br />
+        競技プログラミングにもっと取り組みたいという場合は自分で <a href="https://atcoder.jp/register?continue=https%3A%2F%2Fatcoder.jp%2Fhome">AtCoder のアカウントを作成</a>しましょう．
+      </p>
     </div>
 
     <div>
@@ -217,8 +227,7 @@
                 JOI 2010/2011 予選 問題 A
               </td>
               <td>
-                <span class="hint"
-                  onclick="showHint('まず x の値を計算しよう．次に y の値を計算しよう．プログラミングは方程式を解くシステムではないので，x と y の値を同時に求めるようなことはできない．');">ヒント</span>
+                <span class="hint" onclick="showHint('まず x の値を計算しよう．次に y の値を計算しよう．プログラミングは方程式を解くシステムではないので，x と y の値を同時に求めるようなことはできない．');">ヒント</span>
                 <a href="https://atcoder.jp/contests/joi2011yo/submissions/30548536" target="_blank">解答例</a>
               </td>
             </tr>
@@ -304,8 +313,7 @@
                 JOI 2021/2022 一次予選 (第 3 回) 問題 B
               </td>
               <td>
-                <span class="hint"
-                  onclick="showHint('ベースだけで高さが足りる場合，追加のアイスクリームが必要で S - A が B で割り切れる場合，追加のアイスクリームが必要で S - A が B で割り切れない場合，の 3 パターンに分けて考えよう．');">ヒント</span>
+                <span class="hint" onclick="showHint('ベースだけで高さが足りる場合，追加のアイスクリームが必要で S - A が B で割り切れる場合，追加のアイスクリームが必要で S - A が B で割り切れない場合，の 3 パターンに分けて考えよう．');">ヒント</span>
                 <a href="https://atcoder.jp/contests/joi2022yo1c/submissions/35550614" target="_blank">解答例1</a>
                 <a href="https://atcoder.jp/contests/joi2022yo1c/submissions/31063342" target="_blank">解答例2</a>
               </td>
@@ -369,8 +377,7 @@
                 AtCoder Beginner Contest 218 問題 A
               </td>
               <td>
-                <span class="hint"
-                  onclick="showHint('プログラミングでは 0 から添え字を数えるが，この問題の N は 1 から数えた添え字が与えられている．');">ヒント</span>
+                <span class="hint" onclick="showHint('プログラミングでは 0 から添え字を数えるが，この問題の N は 1 から数えた添え字が与えられている．');">ヒント</span>
                 <a href="https://atcoder.jp/contests/abc218/submissions/31063452" target="_blank">解答例</a>
               </td>
             </tr>
@@ -454,8 +461,7 @@
                 JOI 2020/2021 一次予選 (第 3 回) 問題 B
               </td>
               <td>
-                <span class="hint"
-                  onclick="showHint('for 文を使って i (= 0, ..., N - 1) 文字目に着目しよう．i が偶数のとき，i 文字目は I であってほしい．逆に，i が偶数でかつ i 文字目が I でなければ操作が 1 回必要である．i が奇数でかつ i 文字目が O でない場合も同様である．i が偶数か奇数かは i を 2 で割った余りに着目するとわかる．');">ヒント</span>
+                <span class="hint" onclick="showHint('for 文を使って i (= 0, ..., N - 1) 文字目に着目しよう．i が偶数のとき，i 文字目は I であってほしい．逆に，i が偶数でかつ i 文字目が I でなければ操作が 1 回必要である．i が奇数でかつ i 文字目が O でない場合も同様である．i が偶数か奇数かは i を 2 で割った余りに着目するとわかる．');">ヒント</span>
                 <a href="https://atcoder.jp/contests/joi2021yo1c/submissions/31063560" target="_blank">解答例</a>
               </td>
             </tr>
@@ -467,8 +473,7 @@
                 JOI 2021/2022 一次予選 (第 3 回) 問題 C
               </td>
               <td>
-                <span class="hint"
-                  onclick="showHint('まず，for 文を使って赤組に属していることがわかっている人数を求めよう．すると，その人数がちょうど K 人になっているかどうかで葵の組がわかる．');">ヒント</span>
+                <span class="hint" onclick="showHint('まず，for 文を使って赤組に属していることがわかっている人数を求めよう．すると，その人数がちょうど K 人になっているかどうかで葵の組がわかる．');">ヒント</span>
                 <a href="https://atcoder.jp/contests/joi2022yo1c/submissions/31063590" target="_blank">解答例</a>
               </td>
             </tr>
@@ -626,8 +631,7 @@
                 JOI 2021/2022 一次予選 (第 1 回) 問題 B
               </td>
               <td>
-                <a href="https://atcoder.jp/contests/joi2022yo1a/submissions/29210498" target="_blank">解答例1</a> <a
-                  href="https://atcoder.jp/contests/joi2022yo1a/submissions/31143808" target="_blank">解答例2</a>
+                <a href="https://atcoder.jp/contests/joi2022yo1a/submissions/29210498" target="_blank">解答例1</a> <a href="https://atcoder.jp/contests/joi2022yo1a/submissions/31143808" target="_blank">解答例2</a>
               </td>
             </tr>
             <tr class="task">
@@ -710,9 +714,7 @@
                 JOI 2019/2020 一次予選 (第 1 回) 問題 C
               </td>
               <td>
-                <a href="https://atcoder.jp/contests/joi2020yo1a/submissions/31262319" target="_blank">解答例</a> <span
-                  class="hint"
-                  onclick="showHint('後に学習するが，この解答例の実装方法は時間計算量が大きく，効率が悪い．19 節のマージソートで紹介する実装の方が効率的である．');">コメント</span>
+                <a href="https://atcoder.jp/contests/joi2020yo1a/submissions/31262319" target="_blank">解答例</a> <span class="hint" onclick="showHint('後に学習するが，この解答例の実装方法は時間計算量が大きく，効率が悪い．19 節のマージソートで紹介する実装の方が効率的である．');">コメント</span>
 
               </td>
             </tr>
@@ -970,8 +972,7 @@
                 AtCoder Grand Contest 027 問題 A
               </td>
               <td>
-                <span class="hint" onclick="showHint('x > a_1 + ... + a_N の場合 (コーナーケース) に注意しよう．');">ヒント</span> <a
-                  href="https://atcoder.jp/contests/agc027/submissions/31565577" target="_blank">解答例</a>
+                <span class="hint" onclick="showHint('x > a_1 + ... + a_N の場合 (コーナーケース) に注意しよう．');">ヒント</span> <a href="https://atcoder.jp/contests/agc027/submissions/31565577" target="_blank">解答例</a>
               </td>
             </tr>
           </tbody>
@@ -1017,9 +1018,7 @@
                 AtCoder Beginner Contest 114 問題 C
               </td>
               <td>
-                <span class="hint"
-                  onclick="showHint('再帰関数 solve(s) (s は文字列) の戻り値を，先頭が s である七五三数の個数となるように定義する．');">ヒント</span> <a
-                  href="https://atcoder.jp/contests/abc114/submissions/31565734" target="_blank">解答例</a>
+                <span class="hint" onclick="showHint('再帰関数 solve(s) (s は文字列) の戻り値を，先頭が s である七五三数の個数となるように定義する．');">ヒント</span> <a href="https://atcoder.jp/contests/abc114/submissions/31565734" target="_blank">解答例</a>
               </td>
             </tr>
             <tr class="task">
@@ -1030,8 +1029,7 @@
                 AtCoder Beginner Contest 161 問題 D
               </td>
               <td>
-                <span class="hint"
-                  onclick="showHint('再帰関数 solve(x) を呼び出したとき，先頭が x であるようなルンルン数のうち，3234566667 以下であるものをすべてグローバルなリストの末尾に追加するようにする．solve(1), ..., solve(9) を呼び出した後に，ルンルン数がすべて入ったリストをソートして，K 番目のルンルン数を求めれば良い．3234566667 以下のルンルン数だけ考慮すれば良いことは，入出力例 4 よりわかる．');">ヒント</span>
+                <span class="hint" onclick="showHint('再帰関数 solve(x) を呼び出したとき，先頭が x であるようなルンルン数のうち，3234566667 以下であるものをすべてグローバルなリストの末尾に追加するようにする．solve(1), ..., solve(9) を呼び出した後に，ルンルン数がすべて入ったリストをソートして，K 番目のルンルン数を求めれば良い．3234566667 以下のルンルン数だけ考慮すれば良いことは，入出力例 4 よりわかる．');">ヒント</span>
                 <a href="https://atcoder.jp/contests/abc161/submissions/31584165" target="_blank">解答例</a>
               </td>
             </tr>
@@ -1043,8 +1041,7 @@
                 AtCoder Beginner Contest 119 問題 C
               </td>
               <td>
-                <span class="hint"
-                  onclick="showHint('竹 A に使うことにした竹の長さの総和が a2，竹 B に使うことにした竹の長さの総和が b2，竹 C に使うことにした竹の長さの総和が c2，まだ用途 (A, B, C のいずれかに使うか捨てるか) を決めていない (複数の) 竹の長さのリストが l2 で表されるとき，この状態からうまく魔法を使ったときの MP の最小値を，再帰関数 solve(a2, b2, c2, l2) の戻り値として求められるようにする．');">ヒント</span>
+                <span class="hint" onclick="showHint('竹 A に使うことにした竹の長さの総和が a2，竹 B に使うことにした竹の長さの総和が b2，竹 C に使うことにした竹の長さの総和が c2，まだ用途 (A, B, C のいずれかに使うか捨てるか) を決めていない (複数の) 竹の長さのリストが l2 で表されるとき，この状態からうまく魔法を使ったときの MP の最小値を，再帰関数 solve(a2, b2, c2, l2) の戻り値として求められるようにする．');">ヒント</span>
                 <a href="https://atcoder.jp/contests/abc119/submissions/31588660" target="_blank">解答例</a>
               </td>
             </tr>
@@ -1080,8 +1077,7 @@
                 AtCoder Beginner Contest 045 問題 C
               </td>
               <td>
-                <span class="hint" onclick="showHint('ビット全探索で 2^(|S|-1) 通りある式をすべて試す．');">ヒント</span> <a
-                  href="https://atcoder.jp/contests/abc045/submissions/31708460" target="_blank">解答例</a>
+                <span class="hint" onclick="showHint('ビット全探索で 2^(|S|-1) 通りある式をすべて試す．');">ヒント</span> <a href="https://atcoder.jp/contests/abc045/submissions/31708460" target="_blank">解答例</a>
               </td>
             </tr>
             <tr class="task">
@@ -1092,8 +1088,7 @@
                 AtCoder Beginner Contest 128 問題 C
               </td>
               <td>
-                <span class="hint" onclick="showHint('ビット全探索で 2^N 通りあるスイッチの付け方をすべて試す．');">ヒント</span> <a
-                  href="https://atcoder.jp/contests/abc128/submissions/31707645" target="_blank">解答例</a>
+                <span class="hint" onclick="showHint('ビット全探索で 2^N 通りあるスイッチの付け方をすべて試す．');">ヒント</span> <a href="https://atcoder.jp/contests/abc128/submissions/31707645" target="_blank">解答例</a>
               </td>
             </tr>
             <tr class="task">
@@ -1104,8 +1099,7 @@
                 AtCoder Beginner Contest 167 問題 C
               </td>
               <td>
-                <span class="hint" onclick="showHint('ビット全探索で 2^N 通りある参考書の読み方をすべて試す．');">ヒント</span> <a
-                  href="https://atcoder.jp/contests/abc167/submissions/31708193" target="_blank">解答例</a>
+                <span class="hint" onclick="showHint('ビット全探索で 2^N 通りある参考書の読み方をすべて試す．');">ヒント</span> <a href="https://atcoder.jp/contests/abc167/submissions/31708193" target="_blank">解答例</a>
               </td>
             </tr>
           </tbody>
@@ -1159,8 +1153,7 @@
                 AtCoder Beginner Contest 051 問題 B
               </td>
               <td>
-                <a href="https://atcoder.jp/contests/abc051/submissions/31064091" target="_blank">TLE解法</a> <a
-                  href="https://atcoder.jp/contests/abc051/submissions/29727404" target="_blank">解答例</a>
+                <a href="https://atcoder.jp/contests/abc051/submissions/31064091" target="_blank">TLE解法</a> <a href="https://atcoder.jp/contests/abc051/submissions/29727404" target="_blank">解答例</a>
               </td>
             </tr>
             <tr class="task">
@@ -1171,9 +1164,7 @@
                 AtCoder Beginner Contest 095 問題 C
               </td>
               <td>
-                <a href="https://atcoder.jp/contests/abc095/submissions/31064112" target="_blank">TLE解法1</a> <a
-                  href="https://atcoder.jp/contests/abc095/submissions/31064117" target="_blank">TLE解法2</a> <a
-                  href="https://atcoder.jp/contests/abc095/submissions/30845058" target="_blank">解答例</a>
+                <a href="https://atcoder.jp/contests/abc095/submissions/31064112" target="_blank">TLE解法1</a> <a href="https://atcoder.jp/contests/abc095/submissions/31064117" target="_blank">TLE解法2</a> <a href="https://atcoder.jp/contests/abc095/submissions/30845058" target="_blank">解答例</a>
               </td>
             </tr>
             <tr class="task">
@@ -1195,8 +1186,7 @@
                 AtCoder Beginner Contest 089 問題 C
               </td>
               <td>
-                <span class="hint" onclick="showHint('複数の候補をまとめて処理するイメージを持つと良い．');">ヒント</span> <a
-                  href="https://atcoder.jp/contests/abc089/submissions/31064580" target="_blank">解答例</a>
+                <span class="hint" onclick="showHint('複数の候補をまとめて処理するイメージを持つと良い．');">ヒント</span> <a href="https://atcoder.jp/contests/abc089/submissions/31064580" target="_blank">解答例</a>
               </td>
             </tr>
             <tr class="task">
@@ -1272,9 +1262,7 @@
                 JOI 2010/2011 本選 問題 A
               </td>
               <td>
-                本選問題は C/C++ に合わせて調整されているため<br />PyPy3 では 10 点 (TLE または MLE) で十分である<br /><span class="hint"
-                  onclick="showHint('二次元累積和の典型的な問題である．');">ヒント</span> <a
-                  href="https://atcoder.jp/contests/joi2011ho/submissions/31065864" target="_blank">解答例</a>
+                本選問題は C/C++ に合わせて調整されているため<br />PyPy3 では 10 点 (TLE または MLE) で十分である<br /><span class="hint" onclick="showHint('二次元累積和の典型的な問題である．');">ヒント</span> <a href="https://atcoder.jp/contests/joi2011ho/submissions/31065864" target="_blank">解答例</a>
               </td>
             </tr>
             <tr class="task">
@@ -1285,8 +1273,7 @@
                 AtCoder Beginner Contest 014 問題 C
               </td>
               <td>
-                <span class="hint" onclick="showHint('いもす法の典型的な問題である．いもす法の概要を自分で調べてみよう．');">ヒント</span> <a
-                  href="https://atcoder.jp/contests/abc014/submissions/31066017" target="_blank">解答例</a>
+                <span class="hint" onclick="showHint('いもす法の典型的な問題である．いもす法の概要を自分で調べてみよう．');">ヒント</span> <a href="https://atcoder.jp/contests/abc014/submissions/31066017" target="_blank">解答例</a>
               </td>
             </tr>
           </tbody>
@@ -1308,18 +1295,13 @@
           <tbody>
             <tr class="task">
               <td>
-                <a href="https://atcoder.jp/contests/typical-algorithm/tasks/typical_algorithm_a"
-                  target="_blank">二分探索の練習問題</a>
+                <a href="https://atcoder.jp/contests/typical-algorithm/tasks/typical_algorithm_a" target="_blank">二分探索の練習問題</a>
               </td>
               <td>
                 典型アルゴリズム問題集 問題 A
               </td>
               <td>
-                この問題は解いても塗りつぶされない<br /><a href="https://atcoder.jp/contests/typical-algorithm/submissions/31069193"
-                  target="_blank">解答例1</a> <a href="https://atcoder.jp/contests/typical-algorithm/submissions/31069211"
-                  target="_blank">解答例2(bisect)</a> <a
-                  href="https://atcoder.jp/contests/typical-algorithm/submissions/31069229"
-                  target="_blank">解答例3(一般化)</a>
+                この問題は解いても塗りつぶされない<br /><a href="https://atcoder.jp/contests/typical-algorithm/submissions/31069193" target="_blank">解答例1</a> <a href="https://atcoder.jp/contests/typical-algorithm/submissions/31069211" target="_blank">解答例2(bisect)</a> <a href="https://atcoder.jp/contests/typical-algorithm/submissions/31069229" target="_blank">解答例3(一般化)</a>
               </td>
             </tr>
             <tr class="task">
@@ -1352,8 +1334,7 @@
                 JOI 2008/2009 本選 問題 B
               </td>
               <td>
-                この問題は PyPy3 で提出すると MLE となるが<br />Python3 で提出すれば AC できる<br /><a
-                  href="https://atcoder.jp/contests/joi2009ho/submissions/31069571" target="_blank">解答例</a>
+                この問題は PyPy3 で提出すると MLE となるが<br />Python3 で提出すれば AC できる<br /><a href="https://atcoder.jp/contests/joi2009ho/submissions/31069571" target="_blank">解答例</a>
               </td>
             </tr>
           </tbody>
@@ -1403,8 +1384,7 @@
                 AtCoder Beginner Contest 146 問題 C
               </td>
               <td>
-                <span class="hint" onclick="showHint('整数 n を買うために必要な代金が単調増加することがポイントである．');">ヒント</span> <a
-                  href="https://atcoder.jp/contests/abc146/submissions/31070161" target="_blank">解答例</a>
+                <span class="hint" onclick="showHint('整数 n を買うために必要な代金が単調増加することがポイントである．');">ヒント</span> <a href="https://atcoder.jp/contests/abc146/submissions/31070161" target="_blank">解答例</a>
               </td>
             </tr>
             <tr class="task">
@@ -1415,9 +1395,7 @@
                 AtCoder Beginner Contest 063 問題 D
               </td>
               <td>
-                <span class="hint"
-                  onclick="showHint('【花束】と同じパターン．爆発を起こす回数を k 回として，先にすべての魔物に Bk のダメージを与えておく．');">ヒント</span> <a
-                  href="https://atcoder.jp/contests/abc063/submissions/31070380" target="_blank">解答例</a>
+                <span class="hint" onclick="showHint('【花束】と同じパターン．爆発を起こす回数を k 回として，先にすべての魔物に Bk のダメージを与えておく．');">ヒント</span> <a href="https://atcoder.jp/contests/abc063/submissions/31070380" target="_blank">解答例</a>
               </td>
             </tr>
           </tbody>
@@ -1439,15 +1417,13 @@
           <tbody>
             <tr class="task">
               <td>
-                <a href="https://atcoder.jp/contests/typical-algorithm/tasks/typical_algorithm_b"
-                  target="_blank">区間スケジューリング問題</a>
+                <a href="https://atcoder.jp/contests/typical-algorithm/tasks/typical_algorithm_b" target="_blank">区間スケジューリング問題</a>
               </td>
               <td>
                 典型アルゴリズム問題集 問題 B
               </td>
               <td>
-                この問題は解いても塗りつぶされない<br /><a href="https://atcoder.jp/contests/typical-algorithm/submissions/29789791"
-                  target="_blank">解答例</a>
+                この問題は解いても塗りつぶされない<br /><a href="https://atcoder.jp/contests/typical-algorithm/submissions/29789791" target="_blank">解答例</a>
               </td>
             </tr>
             <tr class="task">
@@ -1492,8 +1468,7 @@
                 AtCoder Regular Contest 006 問題 C
               </td>
               <td>
-                <span class="hint" onclick="showHint('将来使える可能性がより高いダンボールを残したい．');">ヒント</span> <a
-                  href="https://atcoder.jp/contests/arc006/submissions/31082003" target="_blank">解答例</a>
+                <span class="hint" onclick="showHint('将来使える可能性がより高いダンボールを残したい．');">ヒント</span> <a href="https://atcoder.jp/contests/arc006/submissions/31082003" target="_blank">解答例</a>
               </td>
             </tr>
             <tr class="task">
@@ -1504,8 +1479,7 @@
                 AtCoder Beginner Contest 076 問題 C
               </td>
               <td>
-                <span class="hint" onclick="showHint('なるべく前の方の ? を a にしたい．');">ヒント</span> <a
-                  href="https://atcoder.jp/contests/abc076/submissions/31081926" target="_blank">解答例</a>
+                <span class="hint" onclick="showHint('なるべく前の方の ? を a にしたい．');">ヒント</span> <a href="https://atcoder.jp/contests/abc076/submissions/31081926" target="_blank">解答例</a>
               </td>
             </tr>
           </tbody>
@@ -1555,8 +1529,7 @@
                 AtCoder Beginner Contest 129 問題 C
               </td>
               <td>
-                <span class="hint" onclick="showHint('dp[i] (0 ≦ i ≦ N) を「i 段目に辿り着くまでの移動方法」とする');">ヒント</span> <a
-                  href="https://atcoder.jp/contests/abc129/submissions/31255286" target="_blank">解答例</a>
+                <span class="hint" onclick="showHint('dp[i] (0 ≦ i ≦ N) を「i 段目に辿り着くまでの移動方法」とする');">ヒント</span> <a href="https://atcoder.jp/contests/abc129/submissions/31255286" target="_blank">解答例</a>
               </td>
             </tr>
             <tr class="task">
@@ -1624,8 +1597,7 @@
                 JOI 2010/2011 予選 問題 D
               </td>
               <td>
-                <span class="hint" onclick="showHint('dp[i][j] を「i 番目までの符号を入れて，その計算値が j になる場合の数」とする．');">ヒント</span> <a
-                  href="https://atcoder.jp/contests/joi2011yo/submissions/31262554" target="_blank">解答例</a>
+                <span class="hint" onclick="showHint('dp[i][j] を「i 番目までの符号を入れて，その計算値が j になる場合の数」とする．');">ヒント</span> <a href="https://atcoder.jp/contests/joi2011yo/submissions/31262554" target="_blank">解答例</a>
               </td>
             </tr>
             <tr class="task">
@@ -1636,9 +1608,7 @@
                 JOI 2012/2013 予選 問題 D
               </td>
               <td>
-                <span class="hint"
-                  onclick="showHint('dp[i][j] を「i 日目に服 j を着る場合の i 日目までのスコアの最大値」とする．実装は 3 重ループになるだろう．');">ヒント</span> <a
-                  href="https://atcoder.jp/contests/joi2013yo/submissions/31262514" target="_blank">解答例</a>
+                <span class="hint" onclick="showHint('dp[i][j] を「i 日目に服 j を着る場合の i 日目までのスコアの最大値」とする．実装は 3 重ループになるだろう．');">ヒント</span> <a href="https://atcoder.jp/contests/joi2013yo/submissions/31262514" target="_blank">解答例</a>
               </td>
             </tr>
             <tr class="task">
@@ -1649,8 +1619,7 @@
                 JOI 2011/2012 予選 問題 D
               </td>
               <td>
-                <span class="hint"
-                  onclick="showHint('dp[i][j][k] を「i - 1 日目にパスタ j，i 日目にパスタ k を食べた場合の，i 日目までのパスタの食べ方の場合の数」とする．dp[0][*][*][*] は使用せず，dp[1][*][*][*] に初期値を設定する．初期値の実装がやや大変だが，遷移はシンプルである．MOD 値で割るのを忘れないこと．');">ヒント</span>
+                <span class="hint" onclick="showHint('dp[i][j][k] を「i - 1 日目にパスタ j，i 日目にパスタ k を食べた場合の，i 日目までのパスタの食べ方の場合の数」とする．dp[0][*][*][*] は使用せず，dp[1][*][*][*] に初期値を設定する．初期値の実装がやや大変だが，遷移はシンプルである．MOD 値で割るのを忘れないこと．');">ヒント</span>
                 <a href="https://atcoder.jp/contests/joi2012yo/submissions/31263127" target="_blank">解答例</a>
               </td>
             </tr>
@@ -1662,8 +1631,7 @@
                 JOI 2013/2014 予選 問題 D
               </td>
               <td>
-                <span class="hint"
-                  onclick="showHint('dp[i][j][k][l] を「i 日目の J 君が j，O 君が k，I 君が l であるときの，i 日目までのスケジュールの組み方の場合の数」とする (ただし，j, k, l は 0 (不参加) または 1 (参加))．鍵を適切に管理できることは，i - 1 日目と i 日目の両方に参加する人が少なくとも 1 人いることと同値である．解答例では 7 重ループも現れる．');">ヒント</span>
+                <span class="hint" onclick="showHint('dp[i][j][k][l] を「i 日目の J 君が j，O 君が k，I 君が l であるときの，i 日目までのスケジュールの組み方の場合の数」とする (ただし，j, k, l は 0 (不参加) または 1 (参加))．鍵を適切に管理できることは，i - 1 日目と i 日目の両方に参加する人が少なくとも 1 人いることと同値である．解答例では 7 重ループも現れる．');">ヒント</span>
                 <a href="https://atcoder.jp/contests/joi2014yo/submissions/31262839" target="_blank">解答例</a>
               </td>
             </tr>
@@ -1675,8 +1643,7 @@
                 AtCoder Regular Contest 057 問題 B
               </td>
               <td>
-                <span class="hint"
-                  onclick="showHint('この問題は非常に難しいので，一旦飛ばすことを推奨する．<br />K = S_1 + … + S_N のときはコーナーケースである．そうでないとき，機嫌を良くしない日は，翌日以降の機嫌を良くしやすくするために，すべての勝負に負けるのが最適である．恐らく最も自然に思いつくのは dp[i][j] を「i 日目までに j 回ゲームに勝った場合の i 日目までの機嫌が良かった日数の最大値」とすることであるが，これでは TLE となってしまう．【Knapsack 2】と同じテクニックを使おう．');">ヒント</span>
+                <span class="hint" onclick="showHint('この問題は非常に難しいので，一旦飛ばすことを推奨する．<br />K = S_1 + … + S_N のときはコーナーケースである．そうでないとき，機嫌を良くしない日は，翌日以降の機嫌を良くしやすくするために，すべての勝負に負けるのが最適である．恐らく最も自然に思いつくのは dp[i][j] を「i 日目までに j 回ゲームに勝った場合の i 日目までの機嫌が良かった日数の最大値」とすることであるが，これでは TLE となってしまう．【Knapsack 2】と同じテクニックを使おう．');">ヒント</span>
                 <a href="https://atcoder.jp/contests/arc057/submissions/31263600" target="_blank">解答例</a>
               </td>
             </tr>
@@ -1710,15 +1677,13 @@
             </tr>
             <tr class="task">
               <td>
-                <a href="https://atcoder.jp/contests/typical-algorithm/tasks/typical_algorithm_c"
-                  target="_blank">巡回セールスマン問題</a>
+                <a href="https://atcoder.jp/contests/typical-algorithm/tasks/typical_algorithm_c" target="_blank">巡回セールスマン問題</a>
               </td>
               <td>
                 典型アルゴリズム問題集 問題 C
               </td>
               <td>
-                この問題は解いても塗りつぶされない<br /><a href="https://atcoder.jp/contests/typical-algorithm/submissions/30845076"
-                  target="_blank">解答例</a>
+                この問題は解いても塗りつぶされない<br /><a href="https://atcoder.jp/contests/typical-algorithm/submissions/30845076" target="_blank">解答例</a>
               </td>
             </tr>
             <tr class="task">
@@ -1729,8 +1694,7 @@
                 Educational DP Contest 問題 F
               </td>
               <td>
-                <span class="hint"
-                  onclick="showHint('どの頂点からの遷移を採用したのか覚えておくと良い．<br />この問題はかなり難しいが極めて重要であるため，解答例やインターネット上の記事を読んでよく理解しておこう．');">ヒント</span>
+                <span class="hint" onclick="showHint('どの頂点からの遷移を採用したのか覚えておくと良い．<br />この問題はかなり難しいが極めて重要であるため，解答例やインターネット上の記事を読んでよく理解しておこう．');">ヒント</span>
                 <a href="https://atcoder.jp/contests/dp/submissions/29835850" target="_blank">解答例</a>
               </td>
             </tr>
@@ -1742,8 +1706,7 @@
                 JOI 2009/2010 予選 問題 E
               </td>
               <td>
-                <span class="hint"
-                  onclick="showHint('dp[i][j][k][l] を「西から i 番目，南から j 番目の交差点に k の向き (0 = 東向き，1 = 北向き) で辿り着く場合の数」とする．ただし l = 1 の場合はこの交差点で向きを変えたことを表す．最終的な答えは dp[w - 1][h - 1][0][0] + dp[w - 1][h - 1][1][0] となる．');">ヒント</span>
+                <span class="hint" onclick="showHint('dp[i][j][k][l] を「西から i 番目，南から j 番目の交差点に k の向き (0 = 東向き，1 = 北向き) で辿り着く場合の数」とする．ただし l = 1 の場合はこの交差点で向きを変えたことを表す．最終的な答えは dp[w - 1][h - 1][0][0] + dp[w - 1][h - 1][1][0] となる．');">ヒント</span>
                 <a href="https://atcoder.jp/contests/joi2010yo/submissions/31278042" target="_blank">解答例</a>
               </td>
             </tr>
@@ -1755,10 +1718,8 @@
                 Educational DP Contest 問題 O
               </td>
               <td>
-                <span class="hint"
-                  onclick="showHint('ビット DP．2 進数 x の 1 の桁の数を数える関数 popcount(x) を自作すると便利．<br />方針 1：dp[i][j] を「男性 0, ..., i - 1 と女性 j (2 進法) だけで i ペア作る場合の数」とする．細かいところの計算時間に気を付けないと，時間計算量が O(2^NN^2) となり間に合わないことがある．<br />方針 2：dp[i] を「男性 0, ..., i - 1 と女性 j (2 進法) だけで i ペア作る場合の数」とする．');">ヒント</span>
-                <a href="https://atcoder.jp/contests/dp/submissions/31278376" target="_blank">解答例1</a> <a
-                  href="https://atcoder.jp/contests/dp/submissions/31278283" target="_blank">解答例2</a>
+                <span class="hint" onclick="showHint('ビット DP．2 進数 x の 1 の桁の数を数える関数 popcount(x) を自作すると便利．<br />方針 1：dp[i][j] を「男性 0, ..., i - 1 と女性 j (2 進法) だけで i ペア作る場合の数」とする．細かいところの計算時間に気を付けないと，時間計算量が O(2^NN^2) となり間に合わないことがある．<br />方針 2：dp[i] を「男性 0, ..., i - 1 と女性 j (2 進法) だけで i ペア作る場合の数」とする．');">ヒント</span>
+                <a href="https://atcoder.jp/contests/dp/submissions/31278376" target="_blank">解答例1</a> <a href="https://atcoder.jp/contests/dp/submissions/31278283" target="_blank">解答例2</a>
               </td>
             </tr>
           </tbody>
@@ -1824,8 +1785,7 @@
                 JOI 2008/2009 予選 問題 D
               </td>
               <td>
-                <span class="hint" onclick="showHint('グリッド状のグラフを探索する際の実装方法は次の幅優先探索の節でも紹介している．');">ヒント</span> <a
-                  href="https://atcoder.jp/contests/joi2009yo/submissions/31376307" target="_blank">解答例</a>
+                <span class="hint" onclick="showHint('グリッド状のグラフを探索する際の実装方法は次の幅優先探索の節でも紹介している．');">ヒント</span> <a href="https://atcoder.jp/contests/joi2009yo/submissions/31376307" target="_blank">解答例</a>
               </td>
             </tr>
             <tr class="task">
@@ -1836,9 +1796,7 @@
                 AtCoder Beginner Contest 126 問題 E
               </td>
               <td>
-                この問題は PyPy3 で提出すると TLE となるが<br />Python3 で提出すれば AC できる<br /><span class="hint"
-                  onclick="showHint('X_i と Y_i の間に辺を張った N 頂点のグラフの連結成分の数に着目しよう．');">ヒント</span> <a
-                  href="https://atcoder.jp/contests/abc126/submissions/31376347" target="_blank">解答例</a>
+                この問題は PyPy3 で提出すると TLE となるが<br />Python3 で提出すれば AC できる<br /><span class="hint" onclick="showHint('X_i と Y_i の間に辺を張った N 頂点のグラフの連結成分の数に着目しよう．');">ヒント</span> <a href="https://atcoder.jp/contests/abc126/submissions/31376347" target="_blank">解答例</a>
               </td>
             </tr>
           </tbody>
@@ -1866,8 +1824,7 @@
                 JOI 2021/2022 二次予選 問題 B
               </td>
               <td>
-                <a href="https://atcoder.jp/contests/joi2022yo2/submissions/31034773" target="_blank">解答例 1</a> <a
-                  href="https://atcoder.jp/contests/joi2022yo2/submissions/31035121" target="_blank">解答例 2</a>
+                <a href="https://atcoder.jp/contests/joi2022yo2/submissions/31034773" target="_blank">解答例 1</a> <a href="https://atcoder.jp/contests/joi2022yo2/submissions/31035121" target="_blank">解答例 2</a>
               </td>
             </tr>
             <tr class="task">
@@ -1889,8 +1846,7 @@
                 AtCoder Grand Contest 033 問題 A
               </td>
               <td>
-                <span class="hint" onclick="showHint('すべての黒マスをスタート地点（距離 0）として幅優先探索を行う．');">ヒント</span> <a
-                  href="https://atcoder.jp/contests/agc033/submissions/31377156" target="_blank">解答例</a>
+                <span class="hint" onclick="showHint('すべての黒マスをスタート地点（距離 0）として幅優先探索を行う．');">ヒント</span> <a href="https://atcoder.jp/contests/agc033/submissions/31377156" target="_blank">解答例</a>
               </td>
             </tr>
           </tbody>
@@ -1912,15 +1868,13 @@
           <tbody>
             <tr class="task">
               <td>
-                <a href="https://atcoder.jp/contests/typical-algorithm/tasks/typical_algorithm_d"
-                  target="_blank">単一始点最短経路問題</a>
+                <a href="https://atcoder.jp/contests/typical-algorithm/tasks/typical_algorithm_d" target="_blank">単一始点最短経路問題</a>
               </td>
               <td>
                 典型アルゴリズム問題集 問題 D
               </td>
               <td>
-                この問題は解いても塗りつぶされない<br /><a href="https://atcoder.jp/contests/typical-algorithm/submissions/30845182"
-                  target="_blank">解答例</a>
+                この問題は解いても塗りつぶされない<br /><a href="https://atcoder.jp/contests/typical-algorithm/submissions/30845182" target="_blank">解答例</a>
               </td>
             </tr>
             <tr class="task">
@@ -1931,8 +1885,7 @@
                 JOI 2015/2016 予選 問題 E
               </td>
               <td>
-                <span class="hint"
-                  onclick="showHint('先に幅優先探索を行って各町が危険か判断する．その情報をもとにダイクストラ法を実行する．幅優先探索で求めた距離によってダイクストラ法の辺のコストを決める．距離が 0 なら移動不可，S 以下ならコスト Q，S より大きければ P である．頂点 N における宿泊費は不要であることに注意．');">ヒント</span>
+                <span class="hint" onclick="showHint('先に幅優先探索を行って各町が危険か判断する．その情報をもとにダイクストラ法を実行する．幅優先探索で求めた距離によってダイクストラ法の辺のコストを決める．距離が 0 なら移動不可，S 以下ならコスト Q，S より大きければ P である．頂点 N における宿泊費は不要であることに注意．');">ヒント</span>
                 <a href="https://atcoder.jp/contests/joi2016yo/submissions/31709235" target="_blank">解答例</a>
               </td>
             </tr>
@@ -1944,8 +1897,7 @@
                 JOI 2016/2017 予選 問題 F
               </td>
               <td>
-                <span class="hint"
-                  onclick="showHint('グラフを拡張してダイクストラ法を適用する．cost[i][j][k] を「今頂点 i にいて以前に j (0: 寒すぎる，1: 暑すぎる) の部屋にいて，温度差の大きい部屋に入れるようになるまでの残り時間が k であるときの，ここまでの経過時間の最小値」とする．');">ヒント</span>
+                <span class="hint" onclick="showHint('グラフを拡張してダイクストラ法を適用する．cost[i][j][k] を「今頂点 i にいて以前に j (0: 寒すぎる，1: 暑すぎる) の部屋にいて，温度差の大きい部屋に入れるようになるまでの残り時間が k であるときの，ここまでの経過時間の最小値」とする．');">ヒント</span>
                 <a href="https://atcoder.jp/contests/joi2017yo/submissions/31709937" target="_blank">解答例</a>
               </td>
             </tr>
@@ -2036,8 +1988,7 @@
                 JOI 2017/2018 本選 問題 B
               </td>
               <td>
-                本選問題は C/C++ に合わせて調整されているため<br />PyPy3 では 60 点 (TLE) で十分である<br /><a
-                  href="https://atcoder.jp/contests/joi2018ho/submissions/31278659" target="_blank">解答例</a>
+                本選問題は C/C++ に合わせて調整されているため<br />PyPy3 では 60 点 (TLE) で十分である<br /><a href="https://atcoder.jp/contests/joi2018ho/submissions/31278659" target="_blank">解答例</a>
               </td>
             </tr>
             <tr class="task">
@@ -2048,8 +1999,7 @@
                 JOI 2007/2008 本選 問題 E
               </td>
               <td>
-                本選問題は C/C++ に合わせて調整されているため<br />PyPy3 では 6 点 (TLE または MLE) で十分である<br /><a
-                  href="https://atcoder.jp/contests/joi2008ho/submissions/31278667" target="_blank">解答例</a>
+                本選問題は C/C++ に合わせて調整されているため<br />PyPy3 では 6 点 (TLE または MLE) で十分である<br /><a href="https://atcoder.jp/contests/joi2008ho/submissions/31278667" target="_blank">解答例</a>
               </td>
             </tr>
           </tbody>
