@@ -230,7 +230,7 @@
               </td>
               <td>
                 <span class="hint" onclick="showHint('問題文に入力の変数名が書かれていないが，適当に a, b, c, d などとすれば良い．');">ヒント1</span>
-                <span class="hint" onclick="showHint('まず x の値を計算しよう．次に y の値を計算しよう．割り算の // と % が使える．プログラミングは方程式を解くシステムではないので，60 * x + y = a + b + c + d といったコードは誤りである．');">ヒント2</span>
+                <span class="hint" onclick="showHint('まず x の値を計算する．次に y の値を計算する．割り算の // と % が使える．プログラミングは方程式を解くシステムではないので，60 * x + y = a + b + c + d といったコードは誤りである．');">ヒント2</span>
                 <a href="https://atcoder.jp/contests/joi2011yo/submissions/30548536" target="_blank">解答例</a>
               </td>
             </tr>
@@ -318,8 +318,8 @@
                 JOI 2021/2022 一次予選 (第 3 回) 問題 B
               </td>
               <td>
-                <span class="hint" onclick="showHint('ベースだけで高さが足りる場合，追加のアイスクリームが必要で S - A が B で割り切れる場合，追加のアイスクリームが必要で S - A が B で割り切れない場合，の 3 パターンに分けて考えよう．');">ヒント</span>
-                <a href="https://atcoder.jp/contests/joi2022yo1c/submissions/35550614" target="_blank">解答例1</a>
+                <span class="hint" onclick="showHint('まず追加のアイスクリームの個数を求め，次にその場合の金額を求める．ベースだけで高さが足りる場合と追加のアイスクリームが必要な場合に分けて考えよう．さらに後者は S - A が B で割り切れる場合と割り切れない場合に分けて考えよう．');">ヒント</span>
+                <a href="https://atcoder.jp/contests/joi2022yo1c/submissions/38335678" target="_blank">解答例1</a>
                 <a href="https://atcoder.jp/contests/joi2022yo1c/submissions/31063342" target="_blank">解答例2</a>
               </td>
             </tr>
@@ -500,7 +500,7 @@
                 JOI 2020/2021 一次予選 (第 3 回) 問題 B
               </td>
               <td>
-                <span class="hint" onclick="showHint('for 文を使って i (= 0, ..., N - 1) 文字目に着目しよう．i が偶数のとき，i 文字目は I であってほしい．逆に，i が偶数でかつ i 文字目が I でなければ操作が 1 回必要である．i が奇数でかつ i 文字目が O でない場合も同様である．i が偶数か奇数かは i を 2 で割った余りに着目するとわかる．「かつ」は and で表現できる．');">ヒント</span>
+                <span class="hint" onclick="showHint('for 文を使って i (= 0, ..., N - 1) 文字目に着目する．i が偶数のとき，i 文字目は I であってほしい．逆に，i が偶数でかつ i 文字目が I でなければ操作が 1 回必要である．i が奇数でかつ i 文字目が O でない場合も同様である．i が偶数か奇数かは i を 2 で割った余りに着目するとわかる．「かつ」は and で表現できる．');">ヒント</span>
                 <a href="https://atcoder.jp/contests/joi2021yo1c/submissions/31063560" target="_blank">解答例</a>
               </td>
             </tr>
@@ -512,7 +512,7 @@
                 JOI 2021/2022 一次予選 (第 3 回) 問題 C
               </td>
               <td>
-                <span class="hint" onclick="showHint('まず，for 文を使って赤組に属していることがわかっている人数を求めよう．すると，その人数がちょうど K 人になっているかどうかで葵の組がわかる．');">ヒント</span>
+                <span class="hint" onclick="showHint('まず，for 文を使って赤組に属していることがわかっている人数を求める．すると，その人数がちょうど K 人になっているかどうかで葵の組がわかる．');">ヒント</span>
                 <a href="https://atcoder.jp/contests/joi2022yo1c/submissions/31063590" target="_blank">解答例</a>
               </td>
             </tr>
@@ -524,7 +524,7 @@
                 JOI 2020/2021 一次予選 (第 1 回) 問題 B
               </td>
               <td>
-                <span class="hint" onclick="showHint('まず，for 文を使って J の個数，O の個数，I の個数をそれぞれ求めよう．');">ヒント</span>
+                <span class="hint" onclick="showHint('まず，for 文を使って J の個数，O の個数，I の個数をそれぞれ求める．');">ヒント</span>
                 <a href="https://atcoder.jp/contests/joi2021yo1a/submissions/31063638" target="_blank">解答例</a>
               </td>
             </tr>
@@ -589,6 +589,7 @@
                 JOIG 2021/2022 本選 問題 A
               </td>
               <td>
+                <span class="hint" onclick="showHint('答えは (A の総和) - (A の最小値) - (A の最大値) となる．総和も最小値も最大値も，暫定値 (0 や極端に大きかったり小さかったりする値) で初期化しておき，for 文でループを回しながら増減させていく典型表現が使える．');">ヒント</span>
                 <a href="https://atcoder.jp/contests/joig2022-open/submissions/31255030" target="_blank">解答例</a>
               </td>
             </tr>
@@ -600,6 +601,7 @@
                 JOI 2020/2021 一次予選 (第 2 回) 問題 C
               </td>
               <td>
+                <span class="hint" onclick="showHint('まず for 文を回して最大値の場所を見つける．次にもう一度 for 文を回して最大値より前の部分の総和を求める．最後にもう一度 for 文を回して最大値より後ろの部分の総和を求める．');">ヒント</span>
                 <a href="https://atcoder.jp/contests/joi2021yo1b/submissions/31255027" target="_blank">解答例</a>
               </td>
             </tr>
@@ -611,6 +613,7 @@
                 JOI 2019/2020 一次予選 (第 2 回) 問題 C
               </td>
               <td>
+                <span class="hint" onclick="showHint('例題を参考に数列 B (例題の a_count と同じこと) を求める．その上でもう一度 for 文を回して最大値を求める．');">ヒント</span>
                 <a href="https://atcoder.jp/contests/joi2020yo1b/submissions/31255054" target="_blank">解答例</a>
               </td>
             </tr>
@@ -622,6 +625,7 @@
                 JOI 2021/2022 一次予選 (第 3 回) 問題 D
               </td>
               <td>
+                <span class="hint" onclick="showHint('ball_to_box という名前のリストを自分で作ってみよう．ball_to_box[i] は「ボール i が入っている箱の番号」とする．');">ヒント</span>
                 <a href="https://atcoder.jp/contests/joi2022yo1c/submissions/31255108" target="_blank">解答例</a>
               </td>
             </tr>
@@ -633,6 +637,7 @@
                 JOI 2021/2022 一次予選 (第 2 回) 問題 D
               </td>
               <td>
+                <span class="hint" onclick="showHint('問題文に「出現回数」というキーワードがあるから，まずは例題と同様に a_count を作る．そのうえで a_count の正の各要素における最大値の場所を求める．');">ヒント</span>
                 <a href="https://atcoder.jp/contests/joi2022yo1b/submissions/31255176" target="_blank">解答例</a>
               </td>
             </tr>
