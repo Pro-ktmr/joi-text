@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <style>
+      h1 {
+        font-size: xx-large;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+      }
+
+      h2 {
+        font-size: x-large;
+        font-weight: bold;
+        margin-top: 1.5rem;
+      }
+
+      h1 a {
+        color: black;
+      }
+
+      .container {
+        max-width: fit-content;
+      }
+    </style>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      window.addEventListener("load", (e) => {
+        const params = new URLSearchParams(window.location.search);
+        if (params.has("aoj_id")) aoj_id.value = params.get("aoj_id");
+        update();
+      });
+
+      function update() {
+        if (aoj_id.value != "") {
+          fetch(
+            `https://judgeapi.u-aizu.ac.jp/submission_records/users/${aoj_id.value}?size=99999999`
+          )
+            .then((response) => {
+              return response.json();
+            })
+            .then((submissions) => {
+              const tasks = document.getElementsByClassName("task");
+              for (const task of tasks) {
+                const task_url = task.children[0].children[0].href;
+                const task_id = task_url.split("/").slice(-1)[0];
+                let ac = false;
+                for (const submission of submissions) {
+                  ac |=
+                    submission["problemId"] === task_id &&
+                    submission["status"] === 4;
+                }
+                if (ac) {
+                  task.classList.add("table-success");
+                }
+              }
+            });
+        }
+      }
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-0YCEGH6ERT"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-0YCEGH6ERT");
+    </script>
+    <title>問題リスト (AOJ 版)｜JOI 公式テキスト　Python で問題解決</title>
+    <meta
+      property="og:url"
+      content="https://pro-ktmr.github.io/joi-text/list-aoj.html"
+    />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:title"
+      content="問題リスト｜JOI 公式テキスト　Python で問題解決"
+    />
+    <meta
+      property="og:description"
+      content="日本情報オリンピックの公式対策テキストが遂に登場！！ Pythonプログラミングからアルゴリズムまでを扱う一冊．未経験から本選進出までの道筋を提示．豊富なサンプルソース．過去問の自動採点システム対応．"
+    />
+    <meta
+      property="og:image"
+      content="https://pro-ktmr.github.io/joi-text/img/ogp.jpg"
+    />
+    <meta
+      property="og:site_name"
+      content="JOI 公式テキスト　Python で問題解決　情報オリンピックに出てみよう"
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="問題リスト｜JOI 公式テキスト　Python で問題解決"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>
+        <a href="list-aoj.html"
+          >問題リスト (AOJ 版)｜JOI 公式テキスト　Python で問題解決</a
+        >
+      </h1>
+
+      <section class="pb-4">
+        <p>
+          JOI 公式テキストは AtCoder と併用することを想定していますが，AOJ
+          と併用する場合に使用できる AOJ 版の問題リストです．ABC
+          等を出典とする問題は別の問題に置き換えています．
+        </p>
+        <ul>
+          <li><a href="https://onlinejudge.u-aizu.ac.jp/signup" target="_blank">AOJ ユーザ登録</a></li>
+          <li>
+            <a href="https://pro-ktmr.github.io/pytry/pytry/" target="_blank"
+              >PyTry</a
+            >
+          </li>
+        </ul>
+      </section>
+
+      <section class="card my-4">
+        <div class="card-header">設定</div>
+        <div class="card-body">
+          <form action="list-aoj.html" method="GET">
+            <div class="form-group row">
+              <label for="IDs" class="col-sm-4 col-form-label"
+                >AOJ アカウント ID</label
+              >
+              <div class="col-sm-8">
+                <input
+                  type="textbox"
+                  class="form-control"
+                  id="aoj_id"
+                  name="aoj_id"
+                  placeholder="AOJ のアカウント ID を入力"
+                />
+              </div>
+            </div>
+            <button type="submit" class="btn btn-dark">表示</button>
+          </form>
+        </div>
+      </section>
+
+      <section>
+        <h2>02 基本のプログラム</h2>
+        <ul>
+          <li>
+            <a
+              href="https://www.youtube.com/watch?v=Ft261GLddq0"
+              target="_blank"
+              >解説動画</a
+            >
+          </li>
+        </ul>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">問題名</th>
+              <th scope="col">出典</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="task">
+              <td>
+                <a
+                  href="https://onlinejudge.u-aizu.ac.jp/challenges/sources/JOI/Prelim/0715"
+                  target="_blank"
+                  >身長</a
+                >
+              </td>
+              <td>JOI 2021/2022 一次予選 (第 3 回) 問題 A</td>
+            </tr>
+            <tr class="task">
+              <td>
+                <a
+                  href="https://onlinejudge.u-aizu.ac.jp/challenges/sources/JOI/Prelim/0739"
+                  target="_blank"
+                  >時間</a
+                >
+              </td>
+              <td>JOI 2022/2023 一次予選 (第 2 回) 問題 A</td>
+            </tr>
+            <tr class="task">
+              <td>
+                <a
+                  href="https://onlinejudge.u-aizu.ac.jp/challenges/sources/JOI/Prelim/0711"
+                  target="_blank"
+                  >立方体</a
+                >
+              </td>
+              <td>JOI 2021/2022 一次予選 (第 2 回) 問題 A</td>
+            </tr>
+            <tr class="task">
+              <td>
+                <a
+                  href="https://onlinejudge.u-aizu.ac.jp/challenges/sources/JOI/Prelim/0735"
+                  target="_blank"
+                  >長方形</a
+                >
+              </td>
+              <td>JOI 2022/2023 一次予選 (第 1 回) 問題 A</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>03 条件分岐で場合分け</h2>
+        <ul>
+          <li>
+            <a
+              href="https://www.youtube.com/watch?v=N0vNt3VO2ZM"
+              target="_blank"
+              >解説動画</a
+            >
+          </li>
+        </ul>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">問題名</th>
+              <th scope="col">出典</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="task">
+              <td>
+                <a
+                  href="https://onlinejudge.u-aizu.ac.jp/challenges/sources/JOI/Prelim/0685"
+                  target="_blank"
+                  >帰省</a
+                >
+              </td>
+              <td>JOI 2020/2021 一次予選 (第 2 回) 問題 A</td>
+            </tr>
+            <tr class="task">
+              <td>
+                <a
+                  href="https://onlinejudge.u-aizu.ac.jp/challenges/sources/JOI/Prelim/0688"
+                  target="_blank"
+                  >計算</a
+                >
+              </td>
+              <td>JOI 2020/2021 一次予選 (第 3 回) 問題 A</td>
+            </tr>
+            <tr class="task">
+              <td>
+                <a
+                  href="https://onlinejudge.u-aizu.ac.jp/challenges/sources/JOI/Prelim/0663"
+                  target="_blank"
+                  >3 つの整数</a
+                >
+              </td>
+              <td>JOI 2019/2020 一次予選 (第 1 回) 問題 A</td>
+            </tr>
+            <tr class="task">
+              <td>
+                <a
+                  href="https://onlinejudge.u-aizu.ac.jp/challenges/sources/JOI/Prelim/0716"
+                  target="_blank"
+                  >アイスクリーム</a
+                >
+              </td>
+              <td>JOI 2021/2022 一次予選 (第 3 回) 問題 B</td>
+            </tr>
+            <tr class="task">
+              <td>
+                <a
+                  href="https://onlinejudge.u-aizu.ac.jp/challenges/sources/JOI/Prelim/0666"
+                  target="_blank"
+                  >試験</a
+                >
+              </td>
+              <td>JOI 2019/2020 一次予選 (第 2 回) 問題 A</td>
+            </tr>
+            <tr class="task">
+              <td>
+                <a
+                  href="https://onlinejudge.u-aizu.ac.jp/challenges/sources/JOI/Prelim/0682"
+                  target="_blank"
+                  >2 番目に大きい整数</a
+                >
+              </td>
+              <td>JOI 2019/2020 一次予選 (第 1 回) 問題 A</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>04 文字列</h2>
+        <ul>
+          <li>
+            <a
+              href="https://www.youtube.com/watch?v=qj8IhMVxeL4"
+              target="_blank"
+              >解説動画</a
+            >
+          </li>
+        </ul>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">問題名</th>
+              <th scope="col">出典</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="task">
+              <td>
+                <a
+                  href="https://onlinejudge.u-aizu.ac.jp/challenges/sources/JOI/Prelim/0736"
+                  target="_blank"
+                  >ゾロ目</a
+                >
+              </td>
+              <td>JOI 2022/2023 一次予選 (第 1 回) 問題 B</td>
+            </tr>
+            <tr class="task">
+              <td>
+                <a
+                  href="https://onlinejudge.u-aizu.ac.jp/courses/lesson/9/INFO1/10/INFO1_10_F"
+                  target="_blank"
+                  >文字列の長さ</a
+                >
+              </td>
+              <td>AOJ INFO1 10_F</td>
+            </tr>
+            <tr class="task">
+              <td>
+                <a
+                  href="https://onlinejudge.u-aizu.ac.jp/courses/lesson/9/INFO1/10/INFO1_10_D"
+                  target="_blank"
+                  >文字の種類</a
+                >
+              </td>
+              <td>AOJ INFO1 10_D</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>05 for ループで同じ処理を繰り返す</h2>
+        <ul>
+          <li>
+            <a
+              href="https://www.youtube.com/watch?v=aFG1rJ_BAFk"
+              target="_blank"
+              >解説動画</a
+            >
+          </li>
+        </ul>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">問題名</th>
+              <th scope="col">出典</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="task">
+              <td>
+                <a
+                  href="https://onlinejudge.u-aizu.ac.jp/challenges/sources/JOI/Prelim/0713"
+                  target="_blank"
+                  >次の文字</a
+                >
+              </td>
+              <td>JOI 2021/2022 一次予選 (第 2 回) 問題 C</td>
+            </tr>
+            <tr class="task">
+              <td>
+                <a
+                  href="https://onlinejudge.u-aizu.ac.jp/challenges/sources/JOI/Prelim/0717"
+                  target="_blank"
+                  >運動会</a
+                >
+              </td>
+              <td>JOI 2021/2022 一次予選 (第 3 回) 問題 C</td>
+            </tr>
+            <tr class="task">
+              <td>
+                <a
+                  href="https://onlinejudge.u-aizu.ac.jp/challenges/sources/JOI/Prelim/0683"
+                  target="_blank"
+                  >JOI ソート</a
+                >
+              </td>
+              <td>JOI 2020/2021 一次予選 (第 1 回) 問題 B</td>
+            </tr>
+            <tr class="task">
+              <td>
+                <a
+                  href="https://onlinejudge.u-aizu.ac.jp/challenges/sources/JOI/Prelim/0741"
+                  target="_blank"
+                  >繰り返し文字列</a
+                >
+              </td>
+              <td>JOI 2022/2023 一次予選 (第 2 回) 問題 C</td>
+            </tr>
+            <tr class="task">
+              <td>
+                <a
+                  href="https://onlinejudge.u-aizu.ac.jp/challenges/sources/JOI/Prelim/0689"
+                  target="_blank"
+                  >IOI 文字列</a
+                >
+              </td>
+              <td>JOI 2020/2021 一次予選 (第 3 回) 問題 B</td>
+            </tr>
+            <tr class="task">
+              <td>
+                <a
+                  href="https://onlinejudge.u-aizu.ac.jp/challenges/sources/JOI/Prelim/0667"
+                  target="_blank"
+                  >文字列の反転</a
+                >
+              </td>
+              <td>JOI 2019/2020 一次予選 (第 2 回) 問題 B</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>06 リストで複数個の変数を管理</h2>
+        <ul>
+          <li>
+            <a
+              href="https://www.youtube.com/watch?v=Yl6W1KIi8BM"
+              target="_blank"
+              >解説動画</a
+            >
+          </li>
+        </ul>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">問題名</th>
+              <th scope="col">出典</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="task">
+              <td>
+                <a
+                  href="https://onlinejudge.u-aizu.ac.jp/challenges/sources/JOI/Prelim/0684"
+                  target="_blank"
+                  >共通要素</a
+                >
+              </td>
+              <td>JOI 2020/2021 一次予選 (第 1 回) 問題 C</td>
+            </tr>
+            <tr class="task">
+              <td>
+                <a
+                  href="https://onlinejudge.u-aizu.ac.jp/challenges/sources/JOI/Prelim/0687"
+                  target="_blank"
+                  >分割</a
+                >
+              </td>
+              <td>JOI 2020/2021 一次予選 (第 2 回) 問題 C</td>
+            </tr>
+            <tr class="task">
+              <td>
+                <a
+                  href="https://onlinejudge.u-aizu.ac.jp/challenges/sources/JOI/Prelim/0668"
+                  target="_blank"
+                  >最頻値</a
+                >
+              </td>
+              <td>JOI 2019/2020 一次予選 (第 2 回) 問題 C</td>
+            </tr>
+            <tr class="task">
+              <td>
+                <a
+                  href="https://onlinejudge.u-aizu.ac.jp/challenges/sources/JOI/Prelim/0747"
+                  target="_blank"
+                  >年齢の差</a
+                >
+              </td>
+              <td>JOI 2022/2023 二次予選 問題 A</td>
+            </tr>
+            <tr class="task">
+              <td>
+                <a
+                  href="https://onlinejudge.u-aizu.ac.jp/challenges/sources/JOI/Prelim/0718"
+                  target="_blank"
+                  >ボールの移動</a
+                >
+              </td>
+              <td>JOI 2021/2022 一次予選 (第 3 回) 問題 D</td>
+            </tr>
+            <tr class="task">
+              <td>
+                <a
+                  href="https://onlinejudge.u-aizu.ac.jp/challenges/sources/JOI/Prelim/0714"
+                  target="_blank"
+                  >希少な数</a
+                >
+              </td>
+              <td>JOI 2021/2022 一次予選 (第 2 回) 問題 D</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </body>
+</html>
