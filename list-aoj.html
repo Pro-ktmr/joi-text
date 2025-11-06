@@ -32,6 +32,12 @@
       .container {
         max-width: fit-content;
       }
+
+      .hint {
+        color: #008000;
+        cursor: pointer;
+        text-decoration: underline;
+      }
     </style>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -70,6 +76,15 @@
               }
             });
         }
+      }
+
+      function showHint(message) {
+        document.getElementById("myModalBody").innerHTML = message;
+        let myModal = new bootstrap.Modal(
+          document.getElementById("myModal"),
+          {}
+        );
+        myModal.show();
       }
     </script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -129,7 +144,11 @@
           等を出典とする問題は別の問題に置き換えています．
         </p>
         <ul>
-          <li><a href="https://onlinejudge.u-aizu.ac.jp/signup" target="_blank">AOJ ユーザ登録</a></li>
+          <li>
+            <a href="https://onlinejudge.u-aizu.ac.jp/signup" target="_blank"
+              >AOJ ユーザ登録</a
+            >
+          </li>
           <li>
             <a href="https://pro-ktmr.github.io/pytry/pytry/" target="_blank"
               >PyTry</a
@@ -177,6 +196,7 @@
             <tr>
               <th scope="col">問題名</th>
               <th scope="col">出典</th>
+              <th scope="col">備考</th>
             </tr>
           </thead>
           <tbody>
@@ -187,8 +207,16 @@
                   target="_blank"
                   >身長</a
                 >
+                <span class="badge bg-success">例題</span>
               </td>
               <td>JOI 2021/2022 一次予選 (第 3 回) 問題 A</td>
+              <td>
+                <a
+                  href="https://onlinejudge.u-aizu.ac.jp/status/users/Pro_ktmr/submissions/1/0715/judge/11026358/Python3"
+                  target="_blank"
+                  >解答例</a
+                >
+              </td>
             </tr>
             <tr class="task">
               <td>
@@ -197,8 +225,16 @@
                   target="_blank"
                   >時間</a
                 >
+                <span class="badge bg-danger">最低限</span>
               </td>
               <td>JOI 2022/2023 一次予選 (第 2 回) 問題 A</td>
+              <td>
+                <a
+                  href="https://onlinejudge.u-aizu.ac.jp/status/users/Pro_ktmr/submissions/1/0739/judge/11026351/Python3"
+                  target="_blank"
+                  >解答例</a
+                >
+              </td>
             </tr>
             <tr class="task">
               <td>
@@ -207,8 +243,16 @@
                   target="_blank"
                   >立方体</a
                 >
+                <span class="badge bg-danger">最低限</span>
               </td>
               <td>JOI 2021/2022 一次予選 (第 2 回) 問題 A</td>
+              <td>
+                <a
+                  href="https://onlinejudge.u-aizu.ac.jp/status/users/Pro_ktmr/submissions/1/0711/judge/11026353/Python3"
+                  target="_blank"
+                  >解答例</a
+                >
+              </td>
             </tr>
             <tr class="task">
               <td>
@@ -217,8 +261,16 @@
                   target="_blank"
                   >長方形</a
                 >
+                <span class="badge bg-danger">最低限</span>
               </td>
               <td>JOI 2022/2023 一次予選 (第 1 回) 問題 A</td>
+              <td>
+                <a
+                  href="https://onlinejudge.u-aizu.ac.jp/status/users/Pro_ktmr/submissions/1/0735/judge/11026355/Python3"
+                  target="_blank"
+                  >解答例</a
+                >
+              </td>
             </tr>
           </tbody>
         </table>
@@ -240,6 +292,7 @@
             <tr>
               <th scope="col">問題名</th>
               <th scope="col">出典</th>
+              <th scope="col">備考</th>
             </tr>
           </thead>
           <tbody>
@@ -250,8 +303,16 @@
                   target="_blank"
                   >帰省</a
                 >
+                <span class="badge bg-success">例題</span>
               </td>
               <td>JOI 2020/2021 一次予選 (第 2 回) 問題 A</td>
+              <td>
+                <a
+                  href="https://onlinejudge.u-aizu.ac.jp/status/users/Pro_ktmr/submissions/1/0685/judge/11026363/Python3"
+                  target="_blank"
+                  >解答例</a
+                >
+              </td>
             </tr>
             <tr class="task">
               <td>
@@ -260,8 +321,21 @@
                   target="_blank"
                   >計算</a
                 >
+                <span class="badge bg-danger">最低限</span>
               </td>
               <td>JOI 2020/2021 一次予選 (第 3 回) 問題 A</td>
+              <td>
+                <span
+                  class="hint"
+                  onclick="showHint('A + B > A - B の場合と，それ以外の場合とで，場合分けを考えよう．');"
+                  >ヒント</span
+                >
+                <a
+                  href="https://onlinejudge.u-aizu.ac.jp/status/users/Pro_ktmr/submissions/1/0688/judge/11026366/Python3"
+                  target="_blank"
+                  >解答例</a
+                >
+              </td>
             </tr>
             <tr class="task">
               <td>
@@ -270,8 +344,21 @@
                   target="_blank"
                   >3 つの整数</a
                 >
+                <span class="badge bg-danger">最低限</span>
               </td>
               <td>JOI 2019/2020 一次予選 (第 1 回) 問題 A</td>
+              <td>
+                <span
+                  class="hint"
+                  onclick="showHint('A + B + C に着目しよう．');"
+                  >ヒント</span
+                >
+                <a
+                  href="https://onlinejudge.u-aizu.ac.jp/status/users/Pro_ktmr/submissions/1/0663/judge/11026365/Python3"
+                  target="_blank"
+                  >解答例</a
+                >
+              </td>
             </tr>
             <tr class="task">
               <td>
@@ -282,6 +369,18 @@
                 >
               </td>
               <td>JOI 2021/2022 一次予選 (第 3 回) 問題 B</td>
+              <td>
+                <span
+                  class="hint"
+                  onclick="showHint('まず追加のアイスクリームの個数を求め，次にその場合の金額を求める．ベースだけで高さが足りる場合と追加のアイスクリームが必要な場合に分けて考えよう．さらに後者は S - A が B で割り切れる場合と割り切れない場合に分けて考えよう．');"
+                  >ヒント</span
+                >
+                <a
+                  href="https://onlinejudge.u-aizu.ac.jp/status/users/Pro_ktmr/submissions/1/0716/judge/11026367/Python3"
+                  target="_blank"
+                  >解答例</a
+                >
+              </td>
             </tr>
             <tr class="task">
               <td>
@@ -290,8 +389,19 @@
                   target="_blank"
                   >試験</a
                 >
+                <span class="badge bg-danger">最低限</span>
               </td>
               <td>JOI 2019/2020 一次予選 (第 2 回) 問題 A</td>
+              <td>
+                <span class="hint" onclick="showHint('最小値を求めよう．');"
+                  >ヒント</span
+                >
+                <a
+                  href="https://onlinejudge.u-aizu.ac.jp/status/users/Pro_ktmr/submissions/1/0666/judge/11026369/Python3"
+                  target="_blank"
+                  >解答例</a
+                >
+              </td>
             </tr>
             <tr class="task">
               <td>
@@ -302,6 +412,18 @@
                 >
               </td>
               <td>JOI 2019/2020 一次予選 (第 1 回) 問題 A</td>
+              <td>
+                <span
+                  class="hint"
+                  onclick="showHint('3 つの文字の並べ方は 3 × 2 × 1 = 6 通りある．6 パターンを漏れなく書こう．');"
+                  >ヒント</span
+                >
+                <a
+                  href="https://onlinejudge.u-aizu.ac.jp/status/users/Pro_ktmr/submissions/1/0682/judge/11026370/Python3"
+                  target="_blank"
+                  >解答例</a
+                >
+              </td>
             </tr>
           </tbody>
         </table>
@@ -323,6 +445,7 @@
             <tr>
               <th scope="col">問題名</th>
               <th scope="col">出典</th>
+              <th scope="col">備考</th>
             </tr>
           </thead>
           <tbody>
@@ -333,8 +456,21 @@
                   target="_blank"
                   >ゾロ目</a
                 >
+                <span class="badge bg-danger">最低限</span>
               </td>
               <td>JOI 2022/2023 一次予選 (第 1 回) 問題 B</td>
+              <td>
+                <span
+                  class="hint"
+                  onclick="showHint('N を整数ではなく文字列として捉えて，0 文字目と 1 文字目に着目しよう．');"
+                  >ヒント</span
+                >
+                <a
+                  href="https://onlinejudge.u-aizu.ac.jp/status/users/Pro_ktmr/submissions/1/0736/judge/11026371/Python3"
+                  target="_blank"
+                  >解答例</a
+                >
+              </td>
             </tr>
             <tr class="task">
               <td>
@@ -343,8 +479,19 @@
                   target="_blank"
                   >文字列の長さ</a
                 >
+                <span class="badge bg-danger">最低限</span>
               </td>
               <td>AOJ INFO1 10_F</td>
+              <td>
+                <span class="hint" onclick="showHint('len() を使おう．');"
+                  >ヒント</span
+                >
+                <a
+                  href="https://onlinejudge.u-aizu.ac.jp/status/users/Pro_ktmr/submissions/1/INFO1_10_F/judge/11026372/Python3"
+                  target="_blank"
+                  >解答例</a
+                >
+              </td>
             </tr>
             <tr class="task">
               <td>
@@ -355,6 +502,16 @@
                 >
               </td>
               <td>AOJ INFO1 10_D</td>
+              <td>
+                <span class="hint" onclick="showHint('ord() を使おう．');"
+                  >ヒント</span
+                >
+                <a
+                  href="https://onlinejudge.u-aizu.ac.jp/status/users/Pro_ktmr/submissions/1/INFO1_10_D/judge/11026378/Python3"
+                  target="_blank"
+                  >解答例</a
+                >
+              </td>
             </tr>
           </tbody>
         </table>
@@ -376,6 +533,7 @@
             <tr>
               <th scope="col">問題名</th>
               <th scope="col">出典</th>
+              <th scope="col">備考</th>
             </tr>
           </thead>
           <tbody>
@@ -386,8 +544,10 @@
                   target="_blank"
                   >次の文字</a
                 >
+                <span class="badge bg-success">例題</span>
               </td>
               <td>JOI 2021/2022 一次予選 (第 2 回) 問題 C</td>
+              <td><a href="https://onlinejudge.u-aizu.ac.jp/status/users/Pro_ktmr/submissions/1/0713/judge/11026388/Python3" target="_blank">解答例</a></td>
             </tr>
             <tr class="task">
               <td>
@@ -396,8 +556,17 @@
                   target="_blank"
                   >運動会</a
                 >
+                <span class="badge bg-danger">最低限</span>
               </td>
               <td>JOI 2021/2022 一次予選 (第 3 回) 問題 C</td>
+              <td>
+                <span
+                  class="hint"
+                  onclick="showHint('まず，赤組に属していることがわかっている人数を求める．次に，その人数がちょうど K 人になっているかどうかで葵の組を判定する．');"
+                  >ヒント</span
+                >
+                <a href="https://onlinejudge.u-aizu.ac.jp/status/users/Pro_ktmr/submissions/1/0717/judge/11026390/Python3" target="_blank">解答例</a>
+              </td>
             </tr>
             <tr class="task">
               <td>
@@ -408,6 +577,14 @@
                 >
               </td>
               <td>JOI 2020/2021 一次予選 (第 1 回) 問題 B</td>
+              <td>
+                <span
+                  class="hint"
+                  onclick="showHint('まず，J の個数，O の個数，I の個数をそれぞれ求める．次に，各文字をその個数分連結する．');"
+                  >ヒント</span
+                >
+                <a href="https://onlinejudge.u-aizu.ac.jp/status/users/Pro_ktmr/submissions/1/0683/judge/11026391/Python3" target="_blank">解答例</a>
+              </td>
             </tr>
             <tr class="task">
               <td>
@@ -416,8 +593,17 @@
                   target="_blank"
                   >繰り返し文字列</a
                 >
+                <span class="badge bg-danger">最低限</span>
               </td>
               <td>JOI 2022/2023 一次予選 (第 2 回) 問題 C</td>
+              <td>
+                <span
+                  class="hint"
+                  onclick="showHint('N / 2 回ループを回す．i 文字目と N / 2 + 1 文字目を比較する．');"
+                  >ヒント</span
+                >
+                <a href="https://onlinejudge.u-aizu.ac.jp/status/users/Pro_ktmr/submissions/1/0741/judge/11026393/Python3" target="_blank">解答例</a>
+              </td>
             </tr>
             <tr class="task">
               <td>
@@ -426,8 +612,17 @@
                   target="_blank"
                   >IOI 文字列</a
                 >
+                <span class="badge bg-danger">最低限</span>
               </td>
               <td>JOI 2020/2021 一次予選 (第 3 回) 問題 B</td>
+              <td>
+                <span
+                  class="hint"
+                  onclick="showHint('ループで i (= 0, ..., N - 1) 文字目に着目する．i が偶数のとき，i 文字目は I であってほしい．逆に，i が偶数でかつ i 文字目が I でなければ操作が 1 回必要である．i が奇数でかつ i 文字目が O でない場合も同様である．i が偶数か奇数かは i を 2 で割った余りに着目するとわかる．「かつ」は and で表現できる．');"
+                  >ヒント</span
+                >
+                <a href="https://onlinejudge.u-aizu.ac.jp/status/users/Pro_ktmr/submissions/1/0689/judge/11026394/Python3" target="_blank">解答例</a>
+              </td>
             </tr>
             <tr class="task">
               <td>
@@ -438,6 +633,14 @@
                 >
               </td>
               <td>JOI 2019/2020 一次予選 (第 2 回) 問題 B</td>
+              <td>
+                <span
+                  class="hint"
+                  onclick="showHint('答えを空の文字列で初期化しておき，ループで 1 文字ずつ付け足していく．');"
+                  >ヒント</span
+                >
+                <a href="https://onlinejudge.u-aizu.ac.jp/status/users/Pro_ktmr/submissions/1/0667/judge/11026397/Python3" target="_blank">解答例</a>
+              </td>
             </tr>
           </tbody>
         </table>
@@ -459,6 +662,7 @@
             <tr>
               <th scope="col">問題名</th>
               <th scope="col">出典</th>
+              <th scope="col">備考</th>
             </tr>
           </thead>
           <tbody>
@@ -469,8 +673,10 @@
                   target="_blank"
                   >共通要素</a
                 >
+                <span class="badge bg-success">例題</span>
               </td>
               <td>JOI 2020/2021 一次予選 (第 1 回) 問題 C</td>
+              <td><a href="https://onlinejudge.u-aizu.ac.jp/status/users/Pro_ktmr/submissions/1/0684/judge/11026409/Python3" target="_blank">解答例</a></td>
             </tr>
             <tr class="task">
               <td>
@@ -479,8 +685,17 @@
                   target="_blank"
                   >分割</a
                 >
+                <span class="badge bg-danger">最低限</span>
               </td>
               <td>JOI 2020/2021 一次予選 (第 2 回) 問題 C</td>
+              <td>
+                <span
+                  class="hint"
+                  onclick="showHint('まず for 文を回して最大値の場所を見つける．次にもう一度 for 文を回して最大値より前の部分の総和を求める．最後にもう一度 for 文を回して最大値より後ろの部分の総和を求める．');"
+                  >ヒント</span
+                >
+                <a href="https://onlinejudge.u-aizu.ac.jp/status/users/Pro_ktmr/submissions/1/0687/judge/11026410/Python3" target="_blank">解答例</a>
+              </td>
             </tr>
             <tr class="task">
               <td>
@@ -489,8 +704,17 @@
                   target="_blank"
                   >最頻値</a
                 >
+                <span class="badge bg-danger">最低限</span>
               </td>
               <td>JOI 2019/2020 一次予選 (第 2 回) 問題 C</td>
+              <td>
+                <span
+                  class="hint"
+                  onclick="showHint('例題を参考に数列 B (例題の a_count と同じこと) を求める．その上でもう一度 for 文を回して最大値を求める．');"
+                  >ヒント</span
+                >
+                <a href="https://onlinejudge.u-aizu.ac.jp/status/users/Pro_ktmr/submissions/1/0668/judge/11026411/Python3" target="_blank">解答例</a>
+              </td>
             </tr>
             <tr class="task">
               <td>
@@ -501,6 +725,14 @@
                 >
               </td>
               <td>JOI 2022/2023 二次予選 問題 A</td>
+              <td>
+                <span
+                  class="hint"
+                  onclick="showHint('まず，年齢の最小値と最大値を求める．');"
+                  >ヒント</span
+                >
+                <a href="https://onlinejudge.u-aizu.ac.jp/status/users/Pro_ktmr/submissions/1/0747/judge/11026417/Python3" target="_blank">解答例</a>
+              </td>
             </tr>
             <tr class="task">
               <td>
@@ -511,6 +743,14 @@
                 >
               </td>
               <td>JOI 2021/2022 一次予選 (第 3 回) 問題 D</td>
+              <td>
+                <span
+                  class="hint"
+                  onclick="showHint('ball_to_box という名前のリストを自分で作ってみよう．ball_to_box[i] は「ボール i が入っている箱の番号」とする．');"
+                  >ヒント</span
+                >
+                <a href="https://onlinejudge.u-aizu.ac.jp/status/users/Pro_ktmr/submissions/1/0718/judge/11026418/Python3" target="_blank">解答例</a>
+              </td>
             </tr>
             <tr class="task">
               <td>
@@ -521,10 +761,50 @@
                 >
               </td>
               <td>JOI 2021/2022 一次予選 (第 2 回) 問題 D</td>
+              <td>
+                <span
+                  class="hint"
+                  onclick="showHint('問題文に「出現回数」というキーワードがあるから，まずは例題と同様に a_count を作る．そのうえで a_count の正の各要素における最大値の場所を求める．');"
+                  >ヒント</span
+                >
+                <a href="https://onlinejudge.u-aizu.ac.jp/status/users/Pro_ktmr/submissions/1/0714/judge/11026419/Python3" target="_blank">解答例</a>
+              </td>
             </tr>
           </tbody>
         </table>
       </section>
+    </div>
+
+    <div
+      class="modal fade"
+      id="myModal"
+      tabindex="-1"
+      aria-labelledby="myModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="myModalLabel">ヒント</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body" id="myModalBody"></div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              閉じる
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
